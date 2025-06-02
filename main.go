@@ -1,15 +1,22 @@
-package main 
+package main
+
+import "fmt"
 
 // import (
 // 	"fmt"
 // )
 
-import "golang.org/x/tour/pic"
+// import "golang.org/x/tour/pic"
 
 // type Sample struct{
 // 	x int
 // 	y string
 // }
+type Vertex struct{
+	Lat , Long float64
+}
+
+var m map[string]Vertex
 
 func main(){
 	// // sample :=Sample{1, "Hello"}	
@@ -20,6 +27,10 @@ func main(){
 	// 	ar[i]=i
 	// } 
 	// fmt.Println(ar)
-	pic.Show(Pic)
-
+	// pic.Show(Pic)
+	m = make(map[string]Vertex)
+	m["Bells"]=Vertex{
+		40 ,50 ,
+	}
+	fmt.Println(m["Bells"])
 }
