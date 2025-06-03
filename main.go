@@ -38,20 +38,33 @@
 package main
 
 import (
-	"strings"
-	"golang.org/x/tour/wc"
+	"fmt"
+	"math"
+	// "strings"
+	// "golang.org/x/tour/wc"
 )
 
-func WordCount(s string) map[string]int {
-	words := strings.Fields(s)
-	count := make(map[string]int)
+// func WordCount(s string) map[string]int {
+// 	words := strings.Fields(s)
+// 	count := make(map[string]int)
 
-	for _,word := range words{
-		count[word]++
-	}
-	return count
+// 	for _,word := range words{
+// 		count[word]++
+// 	}
+// 	return count
+// }
+
+
+//creating and using of functions
+func compute(fn func(float64 , float64 ) float64) float64{
+	return fn(3,4)
 }
-
 func main() {
-	wc.Test(WordCount)
+	running := func(x,y float64) float64{
+		return math.Sqrt(x*x+y*y)
+	}
+	fmt.Println((running(5,12)))
+	fmt.Println(compute(running))
+
+	// wc.Test(WordCount)
 }
